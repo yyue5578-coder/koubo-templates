@@ -31,12 +31,6 @@
 
 ## 安装
 
-**最省事：** 把下面这张下载引导图发给你的 AI 助手，说「照这张图帮我安装白板便签风 Skill」，它会自己下载、安装，并检查 ChatCut 装没装。
-
-![下载引导图](install-guide.png)
-
-想自己一步步装，看下面。
-
 **第一步：装 ChatCut。** 在你的 AI 助手（Claude Code、Codex、WorkBuddy 等）里新开一个对话，发送：
 
 > 阅读 ChatCut.io/desktop，帮我安装 ChatCut
