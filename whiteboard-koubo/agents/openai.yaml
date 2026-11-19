@@ -1,0 +1,4 @@
+interface:
+  display_name: "口播剪辑 · 白板便签风"
+  short_description: "在 ChatCut 里把口播剪成白板便签风短视频：粗剪紧气口、动效圆圈、字幕、真实录音音效、导出实测"
+  default_prompt: "用 $whiteboard-koubo 把我的口播视频剪成白板便签风的 9:16 竖屏短视频，先引导我开始。"
