@@ -175,6 +175,21 @@ def timeline_checks(a):
         add("✅" if other_audio else "⚠", "音效轨", "已放 %d 段" % len(other_audio) if other_audio else "时间线上没有音效（sfx_bed.py 生成的 WAV 没放到 A1？）")
         cap = (tl.get("captionSettings") or {}).get("enabled")
         add("✅" if cap else "❌", "字幕", "已开启" if cap else "字幕没开启（edit_captions action:\"enable\"）")
+        # 字幕位置：y≈1440 以下是抖音/小红书的博主 ID 和标题区，字幕不能落进去（定稿位置 top 1200、高 90）
+        boxes = []
+        def _find(o, path=""):
+            if isinstance(o, dict):
+                if "caption" in path.lower() and isinstance(o.get("top"), (int, float)):
+                    boxes.append((o["top"], o.get("height") or 0))
+                for k, v in o.items():
+                    _find(v, path + "/" + str(k))
+            elif isinstance(o, list):
+                for v in o:
+                    _find(v, path)
+        _find(tl)
+        if cap and boxes:
+            low = max(t + h for t, h in boxes)
+            add("❌" if low > 1440 else "✅", "字幕位置", "字幕下沿 y=%d，落进了平台 ID/标题区（y>1440）。update_track 把 layout.top 设回 1200" % low if low > 1440 else "字幕下沿 y=%d，避开了底部 ID/标题区" % low)
         return tl["durationFrames"] / fps
     except (KeyError, TypeError) as e:
         add("⚠", "时间线", "时间线文件结构和预期不同（%s），跳过时间线检查，改用 preview_timeline 抽帧人工核对" % e)

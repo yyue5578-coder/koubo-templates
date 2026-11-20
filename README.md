@@ -1,6 +1,6 @@
 # 口播剪辑 · 白板便签风（whiteboard-koubo）
 
-当前版本：**1.0.0**（2026-11-19），改动记录见 [CHANGELOG.md](CHANGELOG.md)。
+当前版本：**1.0.1**（2026-11-20），改动记录见 [CHANGELOG.md](CHANGELOG.md)。
 
 把**原始口播素材**直接丢给 AI，出来就是剪好的白板便签风竖屏短视频。
 

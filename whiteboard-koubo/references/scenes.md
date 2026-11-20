@@ -119,7 +119,7 @@
 {"scene":"quote","text":"不是 AI 不行，是你只会去 AI 味","at":0.3,"hl":"只会去 AI 味","hlAt":2.4,"wavyAt":3.0}
 ```
 
-**mindmap**（思维导图）：`center`: `text`、`at`；`nodes[]`（2–6 个）: `text`、`at`、`color`，分支线在 `at` 前 0.25 秒开始画；`hand`（左下角手写一句）。节点位置固定，避开右下角人物圆圈。
+**mindmap**（思维导图）：`center`: `text`、`at`；`nodes[]`（2–6 个）: `text`、`at`、`color`，分支线在 `at` 前 0.25 秒开始画；`hand`（左下角手写一句，只能一行；6 个分支时放不下 hand）。节点位置固定，避开右下角人物圆圈和下方字幕。
 ```json
 {"scene":"mindmap","center":{"text":"爆款脚本","at":0.3},"nodes":[{"text":"有情绪","at":0.9},{"text":"有信息量","at":1.4},{"text":"有反差","at":1.9}],"hand":{"text":"缺一不可","at":3.0,"end":3.6}}
 ```

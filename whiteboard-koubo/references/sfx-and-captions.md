@@ -75,6 +75,9 @@
 - 字幕配色跟风格走。白板便签风定稿的轨道样式（字幕轨的 trackId 就是人声轨 A2 的 id），可直接放进一次 batch：
   ```json
   [{"action":"set_track_style","trackId":"<A2 的 id>","style":{"fontFamily":"Noto Sans SC","fontStyle":{"variant":"normal","weight":"700"},"color":"#22252B","strokeColor":"#FFFFFF","strokeWidth":8,"fontSize":0.045,"maxCharactersPerLine":16}},
-   {"action":"update_track","trackId":"<A2 的 id>","layout":{"left":81,"top":1716,"width":918,"height":90}}]
+   {"action":"update_track","trackId":"<A2 的 id>","layout":{"left":81,"top":1200,"width":918,"height":90}}]
   ```
+- **字幕位置：y 1200–1290，人物圆圈正上方。** 抖音、小红书播放页底部约 380–480 px（1080×1920 画布上 y≈1440 以下）是博主 ID、标题和点赞评论栏，标题展开后还会往上长；旧位置 top 1716 正好被标题压住。现在字幕下沿离底部约 630 px，标题再长也压不到。版式 B 的白板内容区相应收到 y=1190 为止，人物圆圈（1320–1640）不动。
+  - 不要把字幕挪回 y≈1440 以下；也不要放到 y≈220 以上（顶部是平台的导航栏）。
+  - 每行最多 16 字（`maxCharactersPerLine`），只排一行；改字号或每行字数后抽帧确认字幕没有碰到圆圈相框（相框上沿约 y=1300）。
 - 隐藏和改字都走 `edit_captions` 的 batch（坑见 chatcut-notes.md）。

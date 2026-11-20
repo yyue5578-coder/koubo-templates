@@ -74,7 +74,7 @@
 
 ## 人物圆圈（版式 B）
 
-画布 1080×1920，圆心 (770,1480)，直径 320。用户口头有时说「左下角」，其实指的就是这个圆圈，要确认。
+画布 1080×1920，圆心 (770,1480)，直径 320。字幕在圆圈正上方 y 1200–1290，白板内容区到 y=1190。用户口头有时说「左下角」，其实指的就是这个圆圈，要确认。
 
 版式 B 的起点或终点落在某个人物片段中间时，先用 `split_item` 在那一帧切开，再只改落在版式 B 里的那几段。
 
@@ -90,4 +90,4 @@
 
 人物的推镜头、轻震、全屏↔圆圈过渡用 `edit_item` 的 `keyframes`（`transform.x/y/width/height`、`cropTop/…`，帧号是时间线绝对帧），由 `scripts/person_moves.py` 生成，见 motion-graphics.md「人物镜头」。`borderRadius` 不能做关键帧。带 keyframes 的 `edit_item` 返回结果很大（每个点都回显整条曲线）。
 
-改圆圈位置或大小时，三处要一起改：`lib.jsx` 的 `CIRCLE`、`circle_layout.py` 的 `--center/--d`、`ring.jsx` 的摆放位置。
+改圆圈位置或大小时，三处要一起改（还要确认没有碰到上方的字幕 1200–1290，圆圈下沿也别再往下，y≈1440 以下会被平台标题挡住）：`lib.jsx` 的 `CIRCLE`、`circle_layout.py` 的 `--center/--d`、`ring.jsx` 的摆放位置。

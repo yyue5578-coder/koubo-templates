@@ -3,7 +3,7 @@ import { Img } from "remotion";
 import { C, MARK, HAND, BODY, useT, ramp, spr, lerp, EINOUT, Paper, Title, Note, Hand, Highlight, Strike, Tick, XMark, Chip, Bubble, ChatWin, Tape, Stamp, RectStamp, DrawCircle, Wavy, Doodle, Erase, enter, jit } from "./lib.jsx";
 
 // 白板便签风 · 场景模板。每段动效只写一个 SPEC（纯 JSON，时间是「动效内秒」），交给对应场景渲染。
-// 版面、安全区、字号适配都在这里；scripts/scene_cues.py 读同一份 SPEC 生成音效并检查放不放得下。
+// 版面、安全区、字号适配都在这里（版式 B 内容区下沿 y=1190，下面依次是字幕 1200–1290、人物圆圈 1320–1640）；scripts/scene_cues.py 读同一份 SPEC 生成音效并检查放不放得下。
 // 文字测量与换行规则要和 scene_cues.py 保持一致。
 
 // ---------- 文字测量 / 适配 ----------
@@ -119,7 +119,7 @@ export function ListScene({ spec }) {
   const { t } = useT();
   const items = spec.items || [];
   const n = Math.max(items.length, 1);
-  const top = spec.title ? 300 : 160, bottom = 1240;
+  const top = spec.title ? 300 : 160, bottom = 1190;
   const rowH = Math.min(172, (bottom - top) / n);
   const num = spec.numbered !== false;
   const circ = Math.min(110, rowH - 40);
@@ -204,7 +204,7 @@ export function StrikeScene({ spec }) {
   y += nh + 60;
   if (spec.hand) {
     const hf = fit(spec.hand.text, 860, 84, 52, 2);
-    els.push(<HandLines key="h" t={t} a={spec.hand.at} b={spec.hand.end} x={130} y={Math.min(y, 1240 - hf.lines.length * hf.size * 1.15)} f={hf} />);
+    els.push(<HandLines key="h" t={t} a={spec.hand.at} b={spec.hand.end} x={130} y={Math.min(y, 1190 - hf.lines.length * hf.size * 1.15)} f={hf} />);
   }
   return (
     <Paper t={t}>
@@ -241,7 +241,7 @@ export function StepScene({ spec }) {
   }
   if (spec.hand) {
     const hf = fit(spec.hand.text, 840, 84, 52, 2);
-    els.push(<HandLines key="h" t={t} a={spec.hand.at} b={spec.hand.end} x={160} y={Math.min(y, 1240 - hf.lines.length * hf.size * 1.15)} f={hf} />);
+    els.push(<HandLines key="h" t={t} a={spec.hand.at} b={spec.hand.end} x={160} y={Math.min(y, 1190 - hf.lines.length * hf.size * 1.15)} f={hf} />);
   }
   return (
     <Paper t={t}>
@@ -417,7 +417,7 @@ function ListNotes({ spec }) {
   const items = spec.items || [];
   const rows = Math.max(1, Math.ceil(items.length / 2));
   const top = spec.title ? 320 : 170;
-  const rowH = Math.min(NOTES.maxRowH, (1240 - top) / rows);
+  const rowH = Math.min(NOTES.maxRowH, (1190 - top) / rows);
   const nh = rowH - 50;
   return (
     <Paper t={t}>
@@ -443,7 +443,7 @@ function ListNotes({ spec }) {
 // ---------- 6 对比：两栏「以前/现在」「A/B」，可判输赢 ----------
 // {"scene":"compare","title":"手动剪 vs AI 剪","hl":"vs","left":{"label":"手动剪","at":0.4,"items":[{"text":"3 小时","at":0.8}],"mark":"x","markAt":2.0},
 //  "right":{"label":"AI 剪","at":2.4,"items":[{"text":"10 分钟","at":2.8}],"mark":"tick"},"vs":true,"verdict":{"side":"right","at":4.2,"text":"差了 18 倍"}}
-export const CMP = { colW: 430, gap: 40, left: 90, headH: 130, itemW: 370, size: 58, minSize: 34, bottom: 1240 };
+export const CMP = { colW: 430, gap: 40, left: 90, headH: 130, itemW: 370, size: 58, minSize: 34, bottom: 1190 };
 export function compareLayout(spec) {
   const top = spec.title ? 300 : 170;
   const cols = [spec.left || {}, spec.right || {}].map((c) => {
@@ -503,7 +503,7 @@ export function CompareScene({ spec }) {
         <DrawCircle t={t} a={v.at} b={v.at + 0.5} x={CMP.left + (v.side === "right" ? CMP.colW + CMP.gap : 0) + 20} y={L.top + 10} w={CMP.colW - 40} h={CMP.headH - 20} seed={"cmpv"} />
       ) : null}
       {L.vf && decided ? (
-        <Note t={t} at={dflt(v.textAt, v.at + 0.4)} x={140} y={Math.min(L.top + L.colH + 50, 1240 - L.vf.size * 1.7)} w={800} h={Math.round(L.vf.size * 1.7)} color={col(v.color, C.noteY)} seed={"verdict" + v.text} fontSize={L.vf.size}>{v.text}</Note>
+        <Note t={t} at={dflt(v.textAt, v.at + 0.4)} x={140} y={Math.min(L.top + L.colH + 50, 1190 - L.vf.size * 1.7)} w={800} h={Math.round(L.vf.size * 1.7)} color={col(v.color, C.noteY)} seed={"verdict" + v.text} fontSize={L.vf.size}>{v.text}</Note>
       ) : null}
     </Paper>
   );
@@ -528,7 +528,7 @@ export function numberLayout(spec) {
   const lf = spec.label ? fit(spec.label, 860, 64, 40, 1) : null;
   const nf = spec.note ? fit(spec.note.text, 700, 84, 46, 1) : null;
   const h = size * 1.05 + (lf ? lf.size * 1.4 + 40 : 0) + ((spec.bars || []).length ? spec.bars.length * 110 + 30 : 0) + (nf ? nf.size * 1.7 + 40 : 0) + (spec.hand ? 120 : 0);
-  const top2 = top + Math.max(0, (1240 - top - h) * 0.4);
+  const top2 = top + Math.max(0, (1190 - top - h) * 0.4);
   return { top: Math.round(top2), size, suf, w: textW(full, size) + (spec.suffix ? textW(spec.suffix, suf) + 10 : 0), lf };
 }
 export function NumberScene({ spec }) {
@@ -564,12 +564,12 @@ export function NumberScene({ spec }) {
   }
   if (spec.note && t >= spec.note.at) {
     const nf = fit(spec.note.text, 700, 84, 46, 1);
-    els.push(<Note key="n" t={t} at={spec.note.at} x={540 - 400} y={Math.min(y, 1240 - nf.size * 1.7)} w={800} h={Math.round(nf.size * 1.7)} color={col(spec.note.color, C.noteY)} seed={"numnote"} fontSize={nf.size}>{spec.note.text}</Note>);
+    els.push(<Note key="n" t={t} at={spec.note.at} x={540 - 400} y={Math.min(y, 1190 - nf.size * 1.7)} w={800} h={Math.round(nf.size * 1.7)} color={col(spec.note.color, C.noteY)} seed={"numnote"} fontSize={nf.size}>{spec.note.text}</Note>);
     y += nf.size * 1.7 + 40;
   }
   if (spec.hand) {
     const hf = fit(spec.hand.text, 860, 80, 48, 2);
-    els.push(<HandLines key="h" t={t} a={spec.hand.at} b={spec.hand.end} x={130} y={Math.min(y, 1240 - hf.lines.length * hf.size * 1.15)} f={hf} />);
+    els.push(<HandLines key="h" t={t} a={spec.hand.at} b={spec.hand.end} x={130} y={Math.min(y, 1190 - hf.lines.length * hf.size * 1.15)} f={hf} />);
   }
   return (
     <Paper t={t}>
@@ -592,7 +592,7 @@ export function NumberScene({ spec }) {
 export function shotLayout(spec) {
   const top = spec.title ? 290 : 150;
   const capH = spec.caption ? 150 : 0;
-  const boxW = 820, boxH = 1230 - top - capH;
+  const boxW = 820, boxH = 1180 - top - capH;
   const r = Number(spec.ratio) > 0 ? Number(spec.ratio) : 0.75;
   let iw = boxW, ih = iw / r;
   if (ih > boxH) { ih = boxH; iw = ih * r; }
@@ -675,7 +675,7 @@ export function ShotScene({ spec }) {
 function CaptionHand({ t, c, y }) {
   const f = fit(c.text, 840, 76, 46, 1);
   const a = c.at, b = dflt(c.end, c.at + Math.min(1.2, [...c.text].length * 0.08));
-  return <Hand t={t} a={a} b={b} x={Math.max(120, 540 - textW(c.text, f.size) / 2)} y={Math.min(y, 1240 - f.size)} size={f.size} rot={-2}>{c.text}</Hand>;
+  return <Hand t={t} a={a} b={b} x={Math.max(120, 540 - textW(c.text, f.size) / 2)} y={Math.min(y, 1190 - f.size)} size={f.size} rot={-2}>{c.text}</Hand>;
 }
 
 // ---------- 9 金句整屏：一句话逐字写出，划重点、波浪线、署名 ----------
@@ -730,7 +730,8 @@ export function QuoteScene({ spec }) {
 
 // ---------- 10 思维导图：中心词长出分支 ----------
 // {"scene":"mindmap","center":{"text":"爆款脚本","at":0.3},"nodes":[{"text":"有情绪","at":1.0},{"text":"有信息","at":1.6},{"text":"有反差","at":2.2}],"hand":{"text":"三样缺一不可","at":3.0,"end":3.8}}
-export const MIND = { cx: 540, cy: 680, slots: [[260, 330], [820, 330], [250, 1030], [830, 1030], [540, 210], [540, 1170]], nodeW: 340, size: 52, minSize: 32 };
+// 内容区到 y=1190（下面是字幕 1200–1290 和人物圆圈）；整张图比旧版上移 30，第 6 个分支放到 1095
+export const MIND = { cx: 540, cy: 650, slots: [[260, 310], [820, 310], [230, 990], [850, 990], [540, 220], [540, 1095]], nodeW: 340, size: 52, minSize: 32 };
 export function mindLayout(spec) {
   const nodes = (spec.nodes || []).map((n, i) => {
     const f = fit(n.text, MIND.nodeW - 60, MIND.size, MIND.minSize, 2);
@@ -771,7 +772,7 @@ export function MindmapScene({ spec }) {
           <div style={{ textAlign: "center", lineHeight: 1.2 }}>{n.f.lines.map((l, k) => <div key={k}>{l}</div>)}</div>
         </Note>
       ) : null))}
-      {spec.hand ? <HandLines t={t} a={spec.hand.at} b={spec.hand.end} x={120} y={1190} f={fit(spec.hand.text, 440, 72, 44, 2)} /> : null}
+      {spec.hand ? <HandLines t={t} a={spec.hand.at} b={spec.hand.end} x={120} y={1110} f={fit(spec.hand.text, 440, 64, 40, 1)} /> : null}
     </Paper>
   );
 }
@@ -839,7 +840,7 @@ export function CommentScene({ spec }) {
           </div>
         );
       })() : null}
-      {spec.hand ? <HandLines t={t} a={spec.hand.at} b={spec.hand.end} x={130} y={Math.min(L.bottom + 10, 1180)} f={fit(spec.hand.text, 820, 76, 46, 2)} /> : null}
+      {spec.hand ? (() => { const hf = fit(spec.hand.text, 820, 76, 46, 2); return <HandLines t={t} a={spec.hand.at} b={spec.hand.end} x={130} y={Math.min(L.bottom + 10, 1190 - hf.lines.length * hf.size * 1.15)} f={hf} />; })() : null}
     </Paper>
   );
 }
@@ -878,7 +879,7 @@ export function OutroScene({ spec }) {
 // ---------- 所有场景通用的点缀：手绘小图标 doodles、印章 stamp。位置用预设名，不用自己算坐标 ----------
 // "doodles":[{"kind":"bulb","at":1.2,"pos":"title"}]   "stamp":{"text":"踩坑","at":2.0,"pos":"tr"}
 // pos: title 标题右边 | tr 右上 | tl 左上 | mr 右侧中间 | ml 左侧中间 | bl 左下 | mid 正中偏右（人物圆圈在右下，不提供 br）
-export const EXTRA_POS = { tr: [880, 190], tl: [26, 190], mr: [962, 660], ml: [14, 660], bl: [130, 1130], mid: [600, 820] };
+export const EXTRA_POS = { tr: [880, 190], tl: [26, 190], mr: [962, 660], ml: [14, 660], bl: [130, 1080], mid: [600, 820] };
 export const DOODLE_KINDS = ["bulb", "question", "exclaim", "star", "fire", "heart", "bolt", "check", "eyes"];
 function extraPos(spec, pos, w) {
   if (pos === "title" && spec.title) {

@@ -413,7 +413,7 @@ def scene_list(seg, s):
         seg.w("清单 %d 条，场景按 1–6 条设计；多了拆成两段" % len(items))
     n = max(len(items), 1)
     top = 300 if s.get("title") else 160
-    row_h = min(172, (1240 - top) / n)
+    row_h = min(172, (1190 - top) / n)
     circ = min(110, row_h - 40)
     left = 120 + circ + 30 if s.get("numbered", True) else 150
     max_w = 960 - left - (110 if any(o.get("mark") for o in items) else 0)
@@ -503,8 +503,8 @@ def scene_chat(seg, s):
     win_h = max(360, my + 30 + 46)
     wy = 280 if s.get("title") else 120
     bottom = wy + win_h + 70 + len(s.get("notes", [])) * 130
-    if bottom > 1250:
-        seg.w("聊天窗加下方标签到 y=%d，超出版式 B 的内容区（1250）。拆成两段或删消息" % bottom)
+    if bottom > 1200:
+        seg.w("聊天窗加下方标签到 y=%d，超出版式 B 的内容区（1200）。拆成两段或删消息" % bottom)
     for o in s.get("notes", []):
         seg.c(o["at"], "tiny")
         if text_w(o["text"], 46) + 62 > 840:
@@ -590,7 +590,7 @@ EXTRA_POS = {"title", "tr", "tl", "mr", "ml", "bl", "mid"}
 DOODLE_KINDS = {"bulb", "question", "exclaim", "star", "fire", "heart", "bolt", "check", "eyes"}
 
 
-POS_XY = {"tr": (880, 190), "tl": (26, 190), "mr": (962, 660), "ml": (14, 660), "bl": (130, 1130), "mid": (600, 820)}
+POS_XY = {"tr": (880, 190), "tl": (26, 190), "mr": (962, 660), "ml": (14, 660), "bl": (130, 1080), "mid": (600, 820)}
 
 
 def crowd(seg, s, what, pos, w):
@@ -645,8 +645,8 @@ def scene_list_notes(seg, s):
         seg.w("便签墙 %d 张，按 1–6 张设计；多了拆成两段" % len(items))
     rows = max(1, (len(items) + 1) // 2)
     top = 320 if s.get("title") else 170
-    nh = min(300, (1240 - top) / rows) - 50
-    seg.content_bottom = top + rows * min(300, (1240 - top) / rows)
+    nh = min(300, (1190 - top) / rows) - 50
+    seg.content_bottom = top + rows * min(300, (1190 - top) / rows)
     for i, o in enumerate(items):
         lines, size, ov = fit(o["text"], 340, min(56, nh * 0.36), 34, 2)
         over(seg, "item", o["text"], lines, size, ov, "（第 %d 张便签）" % (i + 1))
@@ -696,8 +696,8 @@ def scene_compare(seg, s):
             over(seg, "verdict", v["text"], lines, size, ov, "（结论便签）")
             seg.c(v.get("textAt", v["at"] + 0.4), "pop")
             vh = 50 + size * 1.7
-    if top + max(col_h, 360) + vh > 1240:
-        seg.w("对比两栏加结论高 %d，超出内容区（到 1240）。减少条目或拆成两段" % (top + max(col_h, 360) + vh))
+    if top + max(col_h, 360) + vh > 1190:
+        seg.w("对比两栏加结论高 %d，超出内容区（到 1190）。减少条目或拆成两段" % (top + max(col_h, 360) + vh))
 
 
 def scene_number(seg, s):
@@ -735,8 +735,8 @@ def scene_number(seg, s):
     if s.get("hand"):
         hand(seg, s["hand"], 860)
         h += 120
-    if top + h > 1240:
-        seg.w("数字场景内容高 %d，超出内容区（到 1240）。去掉横条或便签" % (top + h))
+    if top + h > 1190:
+        seg.w("数字场景内容高 %d，超出内容区（到 1190）。去掉横条或便签" % (top + h))
 
 
 def scene_shot(seg, s):
@@ -800,7 +800,15 @@ def scene_mindmap(seg, s):
         over(seg, "node", n["text"], lines, size, ov, "（分支）")
         seg.times(("分支", n["at"]))
         seg.c(n["at"], "tiny")
-    hand(seg, s.get("hand"), 440)
+    h = s.get("hand")
+    if h:
+        # 思维导图的手写句在左下 y=1110，只放一行（下面就是字幕区）
+        lines, size, ov = fit(h["text"], 440, 64, 40, 1)
+        over(seg, "hand", h["text"], lines, size, ov, "（手写，只能一行）")
+        seg.times(("手写 at", h["at"]), ("手写 end", h["end"]))
+        seg.c(h["at"], "scribble", round(min(3, max(0.3, h["end"] - h["at"])), 2))
+        if len(nodes) >= 6:
+            seg.w("6 个分支时第 6 个分支和左下手写句会挤在一起，去掉 hand 或减到 5 个分支")
 
 
 def scene_comment(seg, s):
@@ -820,8 +828,8 @@ def scene_comment(seg, s):
             seg.c(r["at"], "typing", round(max(0.3, r.get("typeDur", min(2.2, len(r["text"]) * 0.08))), 2))
         else:
             seg.c(r["at"], "pop")
-    if y > 1250:
-        seg.w("评论卡片排到 y=%d，超出内容区（1250）。删一条评论或缩短文字" % y)
+    if y > 1200:
+        seg.w("评论卡片排到 y=%d，超出内容区（1200）。删一条评论或缩短文字" % y)
     hand(seg, s.get("hand"), 820)
 
 
