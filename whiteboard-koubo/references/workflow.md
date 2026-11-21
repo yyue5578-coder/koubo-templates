@@ -62,7 +62,7 @@
 
 ## 3 声音偏移 1 帧
 
-ChatCut 导出的声音相对 `sourceIn` 约晚 30 ms（≈ 1 帧）。所以所有视频片段和联动音频的 `sourceIn` 整体 −1 帧（−33333 µs）；`build_cut.py` 默认已带 `--offset-frames -1`。
+ChatCut 导出的声音相对 `sourceIn` 约晚 30 ms（≈1 帧）。所以所有视频片段和联动音频的 `sourceIn` 整体 −1 帧（−33333 µs）；`build_cut.py` 默认已带 `--offset-frames -1`。
 
 每个新项目铺完人声后，先导出一次音频，用 `measure_mix.py <导出> --src-env env.json --cut cut.json` 核对；偏差 < 25 ms 可以不管。该脚本的偏差测量分辨率只有 10 ms（用 10 ms 包络做归一化相关）。ChatCut 版本更新后这个偏移可能变化，以实测为准。
 
