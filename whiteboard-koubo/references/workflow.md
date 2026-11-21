@@ -27,19 +27,19 @@
    python3 scripts/words_from_project.py <workspacePath> <assetId> -o words.json
    ```
    `workspacePath` 取自 `read_project` 返回的 `projectHome.workspacePath`。
-2. `envelope.py 素材.mov env.json` 生成 10 ms RMS 包络（需要 ffmpeg；macOS 没有 ffmpeg 时自动用系统自带的 afconvert）。
+2. `envelope.py 素材.mov env.json` 生成 10 ms RMS 包络（macOS 自动用系统自带的 afconvert，不用装 ffmpeg；Windows 需要 ffmpeg）。
 3. `islands.py list env.json --words words.json --from T0 --to T1` 分段查看语音岛（包络 ≥ 80 算有声，间隙 < 120 ms 合并）和附近的转写词。
 4. 写选条表 `pieces.json`：`[[源起点秒, 源终点秒, 接法, "这一刀应该听到的字"], ...]`，按成片顺序。起止点取自语音岛。
 5. `build_cut.py pieces.json --words words.json --asset <assetId> --src-dur <源时长秒> --size <画布宽>x<画布高> --out-dir .`，逐条处理输出里的 ⚠ 和「重复」，再把 `adds.json` 铺到时间线。
    - `--src-dur` 一定要给：片尾 `E` 多留的 0.45 s 常会超出素材末尾，ChatCut 会拒绝整批写入（source range exceeds asset）。
    - ⚠ 也会误报：切点落在词中间、或转写时间漂移时（例：应听到「者codex」、转写到「或者codex」），用 `islands.py fine` 看波形确认即可。
-   - 输出最后的「跨刀词」先记下来，开启字幕后要用（见 sfx-and-captions.md）。
+   - 输出最后的「跨刀词」先记下，开启字幕后要用（见 sfx-and-captions.md）。
 
 ### 2.2 定剪辑点
 
 - **转写的词级时间不可信**，偏差可达 ±0.5 s。边界必须从包络里取，转写只用来知道「这附近说了什么」。
 - **岛内部要硬切时**（说话人没停顿，但要切掉后半句）：用 `islands.py fine env.json T0 T1` 看逐 10 ms 条形图，切在音节之间真正的静音/谷里，接法写 `"X"`。
-  *为什么*：「你也不用一条一条记」后面紧跟着重说的「直接把提示词」，第一版切点晚了约 0.3 s，把第一个「直接」带了进去，成片里「直接」说了两遍。改为切在「记」的尾音之后的静音谷，再接第二遍完整的「直接把提示词扔进去」。`build_cut.py --words` 把「尾巴重复了下一刀开头」标成「重复」，就是为了防这个。
+  *为什么*：「你也不用一条一条记」后面紧跟着重说的「直接把提示词」，第一版切点晚了约 0.3 s，把第一个「直接」带了进去，成片里「直接」说了两遍。改为切在「记」的尾音之后的静音谷，再接第二遍完整的「直接把提示词丢进去」。`build_cut.py --words` 把「尾巴重复了下一刀开头」标成「重复」，就是为了防这个。
 
 ### 2.3 气口
 
@@ -51,7 +51,7 @@
 | `E` 片尾 | +0.45 s |
 | `X` 硬切 | 0（终点就是切点） |
 
-每刀起点前留 0.04 s 保字头。这组数值偏紧凑，听感是「紧但不喘不过气」。想松一点就调大 `build_cut.py` 顶部的 `GAP`。
+每刀起点前留 0.04 s 保字头。这组数值偏紧凑，听感是「紧但不喘不过气来」。想松一点就调大 `build_cut.py` 顶部的 `GAP`。
 
 ### 2.4 取哪一遍、删什么
 
@@ -62,7 +62,7 @@
 
 ## 3 声音偏移 1 帧
 
-ChatCut 导出的声音相对 `sourceIn` 约晚 30 ms（≈1 帧）。所以所有视频片段和联动音频的 `sourceIn` 整体 −1 帧（−33333 µs）；`build_cut.py` 默认已带 `--offset-frames -1`。
+ChatCut 导出的声音相对 `sourceIn` 约晚 30 ms（≈ 1 帧）。所以所有视频片段和联动音频的 `sourceIn` 整体 −1 帧（−33333 µs）；`build_cut.py` 默认已带 `--offset-frames -1`。
 
 每个新项目铺完人声后，先导出一次音频，用 `measure_mix.py <导出> --src-env env.json --cut cut.json` 核对；偏差 < 25 ms 可以不管。该脚本的偏差测量分辨率只有 10 ms（用 10 ms 包络做归一化相关）。ChatCut 版本更新后这个偏移可能变化，以实测为准。
 
@@ -76,7 +76,7 @@ ChatCut 导出的声音相对 `sourceIn` 约晚 30 ms（≈1 帧）。所以所�
 
 ## 5 交付与可选优化
 
-- 导出时用 `outputPath` 把成片放到用户的工作目录（用户指定了位置就放那里），以 `track_progress` 返回的最终路径为准；宿主能嵌入视频就在回复里嵌入。
+- 导出时用 `outputPath` 把成片放到用户的工作目录（用户指定了位置就放那），以 `track_progress` 返回的最终路径为准；宿主能嵌入视频就在回复里嵌入。
 - **如实说明哪些没验证。** 音效的主观听感只能测数值，要请用户听一遍。
 - 口播类视频**默认不铺 BGM**，只在讲到相关内容时补短音效。
 - 以下是可选优化，**先提出、用户同意再做**：开头 3 秒钩子、圆圈人脸跟踪、避开抖音右侧按钮（字幕已默认避开底部 ID 和标题区）、AI 人声隔离、单段动效别超过约 8 秒。

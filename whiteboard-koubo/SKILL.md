@@ -3,12 +3,12 @@ name: whiteboard-koubo
 description: 在 ChatCut 里把口播/出镜讲话视频剪成白板便签风竖屏短视频：从音频包络定剪辑点粗剪、紧气口、多遍里挑一遍，配白板便签风 Remotion 动效和右下人物圆圈，字幕改同音错字与隐藏，真实录音加合成的音效，导出后实测。用户要用白板便签风剪口播，或点名 whiteboard-koubo 时使用。不用于其他视觉风格（如科技风、发布会风）的口播、没有人声的视频、纯 AI 生成视频，也不用于只要转写或只加字幕的请求。
 license: CC BY-NC 4.0（详见仓库根目录 LICENSE）
 metadata:
-  version: "1.0.1"
+  version: "1.0.2"
 ---
 
 # 口播剪辑 · 白板便签风
 
-版本 1.0.1（2026-11-20）。用户问版本时照这里回答。更新方法：把整个 Skill 文件夹换成新版（不要新旧混放），再新开对话；用户的风格包存在文件夹外面，不会丢。
+版本 1.0.2（2026-11-21）。用户问版本时照这里回答。更新方法：把整个 Skill 文件夹换成新版（不要新旧混放），再新开对话；用户的风格包存在文件夹外面，不会丢。
 
 成片由四层组成：按**实际说出来的话**粗剪的人声；白板便签风动效（版式 A：人物全屏 + 顶部卡片；版式 B：全屏动效在底、人物缩成右下圆圈在上）；字幕；短音效（真实纸张/文具录音 + 代码合成）。口播默认不铺 BGM。
 
@@ -16,11 +16,11 @@ metadata:
 
 用户说「引导我开始」或没给素材时：用一两句话说明能做什么，然后只问缺的东西——素材文件在哪、有没有脚本原文（可选）。素材要求见 [materials.md](references/materials.md)，不符合时先说清楚再动手。
 
-需要的环境：ChatCut Desktop（已登录）、Python 3、ffmpeg（macOS 可用系统自带的 afconvert 代替）。开工前依次检查，缺什么就引导用户装，**每次安装前先问**：
+需要的环境：ChatCut Desktop（已登录）、Python 3；Windows 上还需要 ffmpeg（macOS 用系统自带的 afconvert，不用装 ffmpeg）。开工前依次检查，缺什么就引导用户装，**每次安装前先问**：
 
 1. **ChatCut**：当前对话里能调用 ChatCut 的工具（如 `get_active_project`）就算装好了。没有时按 [setup.md](references/setup.md) 引导安装和登录。装好后 ChatCut 的工具要在**新对话**里才会出现，所以要给用户一段能直接粘贴到新对话的提示，写清素材路径和要做的事。
 2. **Python 3**：`python3 --version`（Windows 上试 `python --version` 或 `py --version`）。
-3. **ffmpeg**：`ffmpeg -version`；macOS 上有 `afconvert` 也行。
+3. **读音频的工具**：macOS 上运行 `which afconvert`，有就够了，**不要提示用户装 ffmpeg**；只有 `afconvert` 也没有时才引导装 ffmpeg。Windows 上运行 `ffmpeg -version`，没有就引导用 `winget install Gyan.FFmpeg` 安装。
 
 ## 流程
 
