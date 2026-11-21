@@ -2,6 +2,10 @@
 
 版本号写在 `whiteboard-koubo/SKILL.md` 开头和 README 顶部。更新方法见 README「更新」。
 
+## 1.0.2（2026-11-21）
+
+- 只改说明，不改功能：写清 ffmpeg 只有 Windows 需要，macOS 用系统自带的 afconvert，不用装。README 的「需要准备」表、`SKILL.md` 的环境检查步骤、`setup.md`、`workflow.md` 和 `envelope.py` 开头注释都已统一。macOS 上 AI 不会再提示安装 ffmpeg。
+
 ## 1.0.1（2026-11-20）
 
 - 字幕上移到人物圆圈正上方（y 1200–1290）。原来在画面最底部（top 1716），发到抖音、小红书后会被博主 ID 和标题压住；现在字幕底边离画面底部约 630 px，标题再长也压不到。

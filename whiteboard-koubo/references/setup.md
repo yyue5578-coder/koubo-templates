@@ -30,12 +30,12 @@
 
 新对话里还是没有 ChatCut 工具，多半是还没登录：先在 ChatCut 里登录，再开一个新对话。重装解决不了。
 
-## 4 Python 3 和 ffmpeg
+## 4 Python 3 和 ffmpeg（ffmpeg 仅 Windows 需要）
 
 | | macOS | Windows |
 |---|---|---|
 | Python 3 | 系统一般自带 `python3`；没有时运行 `xcode-select --install` | `winget install Python.Python.3.12`，装好后重开终端 |
-| ffmpeg | 可以不装（脚本自动改用系统自带的 afconvert）；想装用 `brew install ffmpeg` | `winget install Gyan.FFmpeg`，装好后重开终端 |
+| ffmpeg | 不用装（脚本自动用系统自带的 afconvert）；非要装才用 `brew install ffmpeg` | `winget install Gyan.FFmpeg`，装好后重开终端 |
 
 ## 5 WorkBuddy 频繁弹出「删除文件」确认
 

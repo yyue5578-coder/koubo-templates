@@ -2,7 +2,7 @@
 """把音频/视频转成 10 ms RMS 包络（int16 量纲），存成 JSON 数组。
 
 用法: envelope.py <media> <out.json>
-依赖: ffmpeg。macOS 上没有 ffmpeg 时自动改用系统自带的 afconvert。
+依赖: macOS 自带的 afconvert（不用装 ffmpeg）；Windows 没有 afconvert，需要 ffmpeg。
 包络第 i 个值对应源文件 i*0.01 秒处。经验阈值：>=80 算有声，>=300 算清晰语音。
 """
 import array, json, math, os, shutil, subprocess, sys, tempfile, wave

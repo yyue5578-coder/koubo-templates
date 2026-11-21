@@ -1,6 +1,6 @@
 # 口播剪辑 · 白板便签风（whiteboard-koubo）
 
-当前版本：**1.0.1**（2026-11-20），改动记录见 [CHANGELOG.md](CHANGELOG.md)。
+当前版本：**1.0.2**（2026-11-21），改动记录见 [CHANGELOG.md](CHANGELOG.md)。
 
 把**原始口播素材**直接丢给 AI，出来就是剪好的白板便签风竖屏短视频。
 
@@ -25,7 +25,7 @@
 | ChatCut Desktop | 剪辑、转写、字幕、导出都在 ChatCut 里完成。支持 macOS 13+ 和 Windows 10+（x64），需要注册登录。安装见下方 |
 | 一个能用 Skill 的 AI Agent | 例如 Claude Code、Codex，并接好 ChatCut 的 MCP。**作者实测用 Claude 效果最好** |
 | Python 3 | 脚本只用标准库，不用另装 Python 包 |
-| ffmpeg | 用来读音频波形。macOS 没装也行（自动用系统自带的 afconvert）；Windows 可以用 `winget install Gyan.FFmpeg` 安装 |
+| ffmpeg（**仅 Windows 需要**） | 用来读音频波形。**macOS 不用装**，脚本自动用系统自带的 afconvert；Windows 没有 afconvert，需要装：`winget install Gyan.FFmpeg`，装好后重开终端 |
 
 字体不用装：ChatCut 会按名字自动下载。风格包里可选的 7 款字体都是开源字体：霞鹜漫黑、站酷快乐体、站酷庆科黄油体、龙藏体、马善政、智莽行、思源黑体。
 
