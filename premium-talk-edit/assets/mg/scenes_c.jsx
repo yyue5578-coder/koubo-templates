@@ -1093,7 +1093,7 @@ function LineScene({ spec }) {
           })}
         </svg>
         {hp > 0 && P[hot] ? (
-          <div style={{ position: "absolute", left: 54 + P[hot][0] - 160, width: 320, top: 46 + 120 + P[hot][1] - 92, textAlign: "center", opacity: hp, transform: `translateY(${(1 - hp) * 10}px)`, whiteSpace: "nowrap" }}>
+          <div style={{ position: "absolute", left: P[hot][0] > 828 - 150 ? 54 + P[hot][0] - 300 : P[hot][0] < 150 ? 54 + P[hot][0] - 20 : 54 + P[hot][0] - 160, width: 320, top: 46 + 120 + P[hot][1] - 92, textAlign: P[hot][0] > 828 - 150 ? "right" : P[hot][0] < 150 ? "left" : "center", opacity: hp, transform: `translateY(${(1 - hp) * 10}px)`, whiteSpace: "nowrap" }}>
             <Num size={58}>{vals[hot]}</Num>{spec.unit ? <span style={{ fontSize: 28, fontWeight: 800, marginLeft: 4, color: K.cardMuted }}>{spec.unit}</span> : null}
           </div>
         ) : null}

@@ -76,7 +76,7 @@ Windows 上把 `python3` 换成 `python` 或 `py`，先设 `PYTHONUTF8=1`，临�
 
 ## 想先看看效果
 
-`assets/previews/cards.jpg`（25 种卡片的示例，新加的 3 种还没进预览图）、`assets/previews/themes.jpg`（6 套风格）。预览图里没有真人。
+`assets/previews/cards.jpg`（28 种卡片、30 个示例）、`assets/previews/themes.jpg`（6 套风格）。预览图里没有真人。
 
 ## 更新
 

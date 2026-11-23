@@ -2,7 +2,7 @@
 
 ## 0.2.0（2026-11-23）
 
-- 新增 3 种 B 版式卡片：`line` 折线图（说到趋势、变化）、`trio` 三合一（一句话点名清单、对比表、聊天记录）、`savescore` 省时间加分数（先说省时间，再说质量从几分提到几分）。三张都有自动音效规则，`gk_cues.py --check-jsx` 能核对字段；`trio` 的对比表表头和两句聊天气泡可以用 `tableHead`、`chatAsk`、`chatReply`、`chatHl` 改。演示合集里加了这 3 张的虚构示例；预览图 `cards.jpg` 还没更新。
+- 新增 3 种 B 版式卡片：`line` 折线图（说到趋势、变化）、`trio` 三合一（一句话点名清单、对比表、聊天记录）、`savescore` 省时间加分数（先说省时间，再说质量从几分提到几分）。三张都有自动音效规则，`gk_cues.py --check-jsx` 能核对字段；`trio` 的对比表表头和两句聊天气泡可以用 `tableHead`、`chatAsk`、`chatReply`、`chatHl` 改。演示合集和预览图 `cards.jpg` 里加了这 3 张的虚构示例（预览图按最新组件库整张重拼）。折线图的重点数值靠近左右边缘时自动改成靠边对齐，不会挤出卡片。
 - 支持 Windows：说明书写清 Windows 上的做法（装 ffmpeg、设 `PYTHONUTF8=1`、用 `python`/`py`、找脸和抽帧改用 ChatCut 抽帧）；排错文档补了 Windows 常见报错。
 - 安装更简单：对 AI 助手说「帮我安装这个剪辑 Skill：<仓库链接>」即可，INSTALL.md 里有给助手看的安装步骤。
 - 版权人改为「吃token的皮卡秋」，补上反馈渠道（GitHub Issues）。
