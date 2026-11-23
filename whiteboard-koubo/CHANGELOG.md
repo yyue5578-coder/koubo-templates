@@ -2,6 +2,12 @@
 
 版本号写在 `SKILL.md` 开头和本文件夹 README 顶部。更新方法见 README「更新」。
 
+## 1.0.3（2026-11-23）
+
+- 只改说明，不改功能：仓库改成口播剪辑模板合集 koubo-templates（旧的 whiteboard-koubo 链接会自动跳转），本模板放在 `whiteboard-koubo/` 子文件夹，README、CHANGELOG、LICENSE 一起移了进来。
+- 安装更简单：对 AI 助手说「帮我安装这个剪辑 Skill：<链接>」即可，README 里加了「给 AI 助手看的安装步骤」；装好后助手会问一次要不要给仓库点星，用户同意才点。
+- 「已知限制」更新：macOS 和 Windows 都已实测。
+
 ## 1.0.2（2026-11-21）
 
 - 只改说明，不改功能：写清 ffmpeg 只有 Windows 需要，macOS 用系统自带的 afconvert，不用装。README 的「需要准备」表、`SKILL.md` 的环境检查步骤、`setup.md`、`workflow.md` 和 `envelope.py` 开头注释都已统一。macOS 上 AI 不会再提示安装 ffmpeg。
