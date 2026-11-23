@@ -1,7 +1,7 @@
 ---
 name: whiteboard-koubo
 description: 在 ChatCut 里把口播/出镜讲话视频剪成白板便签风竖屏短视频：从音频包络定剪辑点粗剪、紧气口、多遍里挑一遍，配白板便签风 Remotion 动效和右下人物圆圈，字幕改同音错字与隐藏，真实录音加合成的音效，导出后实测。用户要用白板便签风剪口播，或点名 whiteboard-koubo 时使用。不用于其他视觉风格（如科技风、发布会风）的口播、没有人声的视频、纯 AI 生成视频，也不用于只要转写或只加字幕的请求。
-license: CC BY-NC 4.0（详见仓库根目录 LICENSE）
+license: CC BY-NC 4.0（详见本文件夹的 LICENSE）
 metadata:
   version: "1.0.2"
 ---

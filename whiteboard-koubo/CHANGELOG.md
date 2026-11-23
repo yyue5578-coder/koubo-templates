@@ -1,6 +1,6 @@
 # 改动记录
 
-版本号写在 `whiteboard-koubo/SKILL.md` 开头和 README 顶部。更新方法见 README「更新」。
+版本号写在 `SKILL.md` 开头和本文件夹 README 顶部。更新方法见 README「更新」。
 
 ## 1.0.2（2026-11-21）
 

@@ -1,0 +1,15 @@
+{"project":"cues","events":[
+{"id": "e001", "t": 0.0, "action": "transition", "strength": "medium", "style": "soft", "dur": 0.42, "note": "seg1_hook hookFlip whoosh"},
+{"id": "e002", "t": 3.29, "action": "paper_slide", "strength": "weak", "dur": 0.5, "note": "seg1_hook hookFlip swipe"},
+{"id": "e003", "t": 5.81, "action": "paper_slide", "strength": "weak", "dur": 0.5, "note": "seg1_hook hookFlip swipe"},
+{"id": "e004", "t": 6.35, "action": "transition", "strength": "medium", "style": "soft", "dur": 0.42, "note": "seg2_number number whoosh"},
+{"id": "e005", "t": 7.25, "action": "impact", "strength": "medium", "style": "soft", "note": "seg2_number number hit"},
+{"id": "e006", "t": 7.5, "action": "click", "strength": "weak", "style": "soft", "note": "seg2_number number tick"},
+{"id": "e007", "t": 7.9, "action": "click", "strength": "weak", "style": "soft", "note": "seg2_number number tick"},
+{"id": "e008", "t": 8.3, "action": "click", "strength": "weak", "style": "soft", "note": "seg2_number number tick"},
+{"id": "e009", "t": 9.4, "action": "card_in", "strength": "medium", "style": "soft", "dur": 0.36, "note": "seg3_steps steps pop"},
+{"id": "e010", "t": 9.92, "action": "click", "strength": "weak", "style": "soft", "note": "seg3_steps steps tick"},
+{"id": "e011", "t": 11.88, "action": "click", "strength": "weak", "style": "soft", "note": "seg3_steps steps tick"},
+{"id": "e012", "t": 13.61, "action": "click", "strength": "weak", "style": "soft", "note": "seg3_steps steps tick"},
+{"id": "e013", "t": 15.53, "action": "click", "strength": "weak", "style": "soft", "note": "seg3_steps steps tick"}
+]}

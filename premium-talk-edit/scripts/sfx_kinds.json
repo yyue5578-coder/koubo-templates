@@ -1,0 +1,11 @@
+{
+  "_note": "gk_cues.py 的音色 → sfx 技能事件映射。dur 是动画时长（给 sfx 挑时长相近的音效用）；cue 自带时长（type）时以 cue 为准。",
+  "whoosh": {"action": "transition", "strength": "medium", "style": "soft", "dur": 0.42, "cn": "柔和气流声：底色展开、全屏讲解/钩子/章节进场"},
+  "pop":    {"action": "card_in",    "strength": "medium", "style": "soft", "dur": 0.36, "cn": "卡片、气泡、提示条进场"},
+  "tick":   {"action": "click",      "strength": "weak",   "style": "soft", "cn": "逐项出现的小元素"},
+  "hit":    {"action": "impact",     "strength": "medium", "style": "soft", "cn": "柔和低沉落定：数字计数结束、结果出现"},
+  "swipe":  {"action": "paper_slide", "strength": "weak", "dur": 0.5, "cn": "荧光笔扫过、划掉、文件滑入"},
+  "ok":     {"action": "success",    "strength": "weak", "cn": "轻提示音：清单结论、片尾收藏"},
+  "no":     {"action": "error",      "strength": "weak", "cn": "轻错误音：打叉、风险提示"},
+  "type":   {"action": "typing",     "strength": "weak", "dur": 1.0, "cn": "打字（时长跟 cue）"}
+}

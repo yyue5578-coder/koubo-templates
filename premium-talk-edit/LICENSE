@@ -1,0 +1,39 @@
+口播剪辑 · 高级感干货风（premium-talk-edit）
+Copyright (c) 2026 吃token的皮卡秋
+
+一、许可协议
+
+本作品（premium-talk-edit 文件夹里的代码、动效模板、文档、预览图和示例）采用
+知识共享 署名—非商业性使用 4.0 国际许可协议（CC BY-NC 4.0）授权。
+
+  协议摘要：https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hans
+  协议全文（中文官方译本）：https://creativecommons.org/licenses/by-nc/4.0/legalcode.zh-hans
+  协议全文（英文正本）：https://creativecommons.org/licenses/by-nc/4.0/legalcode.en
+
+简单说：
+- 可以免费使用、修改，也可以把原版或改过的版本分享给别人；
+- 分享时要注明原作者「吃token的皮卡秋」，附上本许可，并说明改过哪里；
+- 不能拿本作品本身赚钱，例如：转卖或付费下载，放进付费课程、付费社群、付费资料包，
+  或者把它包装成收费的剪辑服务、收费的软件或插件。
+
+二、额外许可：用它剪出来的视频可以自由商用
+
+在上面的协议之外，作者另外授权：
+用本作品剪辑、制作出来的视频，归视频的创作者所有，可以自由发布和商用，
+包括接广告、带货、拿平台收益、给客户剪片收费，都不需要另外取得许可，
+视频里也不需要标注本作品或作者。
+
+注意：这项额外许可只针对「剪出来的视频」。如果把本作品本身作为交付物的一部分卖给别人
+（例如把模板文件打包进收费服务），仍然属于上面第一部分禁止的商用。
+另外，视频里用到第三部分里 CC BY 许可的音效时，仍要按那些音效自己的许可署名
+（gk_bed.py 会生成署名清单，贴进视频简介即可）。
+
+三、不在本许可范围内的内容
+
+- assets/sfx-pool/ 里的 24 个音效来自 Freesound，各自按原作者的 CC0 或 CC BY 许可使用，
+  不受本许可限制；来源和 6 个 CC BY 音效的署名文字见 THIRD_PARTY.md 和 assets/sfx-pool/CREDITS.md。
+- 本作品不附带字体文件；用到的字体都是 SIL Open Font License 开源字体，
+  由 ChatCut 从 Google Fonts 加载，按各自的许可使用。
+- 动效基于 Remotion，Remotion 有自己的许可：https://www.remotion.dev/docs/license
+
+本作品按「原样」提供，不提供任何明示或默示的担保；因使用本作品产生的任何问题，作者不承担责任。

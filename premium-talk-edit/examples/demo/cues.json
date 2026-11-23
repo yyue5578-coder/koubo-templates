@@ -1,0 +1,5 @@
+{"fps": 30, "totalFrames": 483, "groups": [
+ {"name": "seg1_hook hookFlip", "startFrame": 0, "layout": "A", "frames": 186, "circle": false, "panelIn": true, "panelOut": true, "cues": [[0.0, "whoosh", null, "hook", "钩子进场"], [3.29, "swipe", null, "strike", "strikeAt 划掉"], [5.81, "swipe", null, "highlight", "markAt 荧光笔"]]},
+ {"name": "seg2_number number", "startFrame": 189, "layout": "B", "frames": 93, "circle": false, "panelIn": true, "panelOut": false, "cues": [[0.05, "whoosh", null, "panel", "底色展开"], [0.95, "hit", null, "big", "计数结束 countAt+0.6"], [1.2, "tick", null, "list", "进度段 1"], [1.6, "tick", null, "list", "进度段 2"], [2.0, "tick", null, "list", "进度段 3"]]},
+ {"name": "seg3_steps steps", "startFrame": 282, "layout": "B", "frames": 201, "circle": false, "panelIn": false, "panelOut": true, "cues": [[0.0, "pop", null, "card", "卡片进场"], [0.52, "tick", null, "list", "第 1 步点亮"], [2.48, "tick", null, "check", "第 2 步点亮（上一步打勾）"], [4.21, "tick", null, "check", "第 3 步点亮（上一步打勾）"], [6.13, "tick", null, "check", "最后一步打勾 endAt"]]}
+]}

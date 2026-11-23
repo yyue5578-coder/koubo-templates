@@ -1,0 +1,681 @@
+{
+ "_说明": "高级感干货风音效池：8 类音色各 3 个（来自 Freesound，经 sfx 技能取回）。挑选规则见 references/sfx.md，由 gk_bed.py --pool 执行。听过觉得不合适的，把那一个的 disabled 改成 true（规则会自动跳过），note 写原因。",
+ "kinds": {
+  "whoosh": {
+   "cn": "转场嗖声",
+   "variants": [
+    {
+     "no": 1,
+     "file": "whoosh_1.wav",
+     "id": "freesound:816261",
+     "title": "Broomstick whoosh 2 - Soft low OKM1",
+     "author": "Sadiquecat",
+     "url": "https://freesound.org/s/816261/",
+     "license": "CC0 1.0",
+     "credit": null,
+     "m": {
+      "onset": 0.118,
+      "end": 0.344,
+      "dur": 0.227,
+      "peak_t": 0.182,
+      "peak_db": -12.0,
+      "zcr": 110
+     },
+     "disabled": false,
+     "note": "",
+     "desc": "中等长度（0.23 秒）、最低沉（过零率 110/秒）"
+    },
+    {
+     "no": 2,
+     "file": "whoosh_2.wav",
+     "id": "freesound:802465",
+     "title": "Stick - Whoosh 7 (Soft)",
+     "author": "Sadiquecat",
+     "url": "https://freesound.org/s/802465/",
+     "license": "CC0 1.0",
+     "credit": null,
+     "m": {
+      "onset": 0.134,
+      "end": 0.269,
+      "dur": 0.135,
+      "peak_t": 0.165,
+      "peak_db": -8.5,
+      "zcr": 303
+     },
+     "disabled": false,
+     "note": "",
+     "desc": "最短（0.14 秒）、中等明亮（过零率 303/秒）"
+    },
+    {
+     "no": 3,
+     "file": "whoosh_3.wav",
+     "id": "freesound:449645",
+     "title": "Transition,action,jump,pitch-shift,short,shimmer,whoosh,positive,soft.wav",
+     "author": "CJDeets",
+     "url": "https://freesound.org/s/449645/",
+     "license": "CC0 1.0",
+     "credit": null,
+     "m": {
+      "onset": 0.027,
+      "end": 0.499,
+      "dur": 0.472,
+      "peak_t": 0.147,
+      "peak_db": -4.7,
+      "zcr": 4255
+     },
+     "disabled": false,
+     "note": "",
+     "desc": "最长（0.47 秒）、最脆亮（过零率 4255/秒）"
+    }
+   ]
+  },
+  "pop": {
+   "cn": "卡片弹出",
+   "variants": [
+    {
+     "no": 1,
+     "file": "pop_1.wav",
+     "id": "freesound:871926",
+     "title": "Pop (Soft UI SFX Free)",
+     "author": "heyheytheree",
+     "url": "https://freesound.org/s/871926/",
+     "license": "CC BY 4.0",
+     "credit": "\"Pop (Soft UI SFX Free)\" by heyheytheree ( https://freesound.org/s/871926/ ) licensed under CC BY 4.0",
+     "m": {
+      "onset": 0.0,
+      "end": 0.106,
+      "dur": 0.106,
+      "peak_t": 0.001,
+      "peak_db": -14.3,
+      "zcr": 975
+     },
+     "disabled": false,
+     "note": "",
+     "desc": "最长（0.11 秒）、最低沉（过零率 975/秒）"
+    },
+    {
+     "no": 2,
+     "file": "pop_2.wav",
+     "id": "freesound:871910",
+     "title": "Click pop (Soft UI SFX Free)",
+     "author": "heyheytheree",
+     "url": "https://freesound.org/s/871910/",
+     "license": "CC BY 4.0",
+     "credit": "\"Click pop (Soft UI SFX Free)\" by heyheytheree ( https://freesound.org/s/871910/ ) licensed under CC BY 4.0",
+     "m": {
+      "onset": 0.0,
+      "end": 0.086,
+      "dur": 0.085,
+      "peak_t": 0.001,
+      "peak_db": -8.9,
+      "zcr": 1159
+     },
+     "disabled": false,
+     "note": "",
+     "desc": "中等长度（0.09 秒）、中等明亮（过零率 1159/秒）"
+    },
+    {
+     "no": 3,
+     "file": "pop_3.wav",
+     "id": "freesound:878248",
+     "title": "UI Hover Micro Swish",
+     "author": "Qvantor",
+     "url": "https://freesound.org/s/878248/",
+     "license": "CC0 1.0",
+     "credit": null,
+     "m": {
+      "onset": 0.012,
+      "end": 0.049,
+      "dur": 0.037,
+      "peak_t": 0.04,
+      "peak_db": -8.5,
+      "zcr": 9735
+     },
+     "disabled": false,
+     "note": "",
+     "desc": "最短（0.04 秒）、最脆亮（过零率 9735/秒）"
+    }
+   ]
+  },
+  "tick": {
+   "cn": "轻点",
+   "variants": [
+    {
+     "no": 1,
+     "file": "tick_1.wav",
+     "id": "freesound:528561",
+     "title": "Soft UI Button Click",
+     "author": "Jummit",
+     "url": "https://freesound.org/s/528561/",
+     "license": "CC0 1.0",
+     "credit": null,
+     "m": {
+      "onset": 0.0,
+      "end": 0.048,
+      "dur": 0.048,
+      "peak_t": 0.002,
+      "peak_db": -19.6,
+      "zcr": 6975
+     },
+     "disabled": false,
+     "note": "",
+     "desc": "最短（0.05 秒）、最脆亮（过零率 6975/秒）"
+    },
+    {
+     "no": 2,
+     "file": "tick_2.wav",
+     "id": "freesound:288911",
+     "title": "Click_Soft_01.wav",
+     "author": "LittleRobotSoundFactory",
+     "url": "https://freesound.org/s/288911/",
+     "license": "CC BY 4.0",
+     "credit": "\"Click_Soft_01.wav\" by LittleRobotSoundFactory ( https://freesound.org/s/288911/ ) licensed under CC BY 4.0",
+     "m": {
+      "onset": 0.0,
+      "end": 0.049,
+      "dur": 0.049,
+      "peak_t": 0.006,
+      "peak_db": -2.6,
+      "zcr": 634
+     },
+     "disabled": false,
+     "note": "",
+     "desc": "中等长度（0.05 秒）、最低沉（过零率 634/秒）"
+    },
+    {
+     "no": 3,
+     "file": "tick_3.wav",
+     "id": "freesound:477620",
+     "title": "Heater Fan Snap Button 1_3",
+     "author": "Joao_Janz",
+     "url": "https://freesound.org/s/477620/",
+     "license": "CC0 1.0",
+     "credit": null,
+     "m": {
+      "onset": 0.0,
+      "end": 0.062,
+      "dur": 0.062,
+      "peak_t": 0.004,
+      "peak_db": -11.1,
+      "zcr": 3817
+     },
+     "disabled": false,
+     "note": "",
+     "desc": "最长（0.06 秒）、中等明亮（过零率 3817/秒）"
+    }
+   ]
+  },
+  "hit": {
+   "cn": "数字落定",
+   "variants": [
+    {
+     "no": 1,
+     "file": "hit_1.wav",
+     "id": "freesound:653910",
+     "title": "soft-hit.wav",
+     "author": "Krokulator",
+     "url": "https://freesound.org/s/653910/",
+     "license": "CC0 1.0",
+     "credit": null,
+     "m": {
+      "onset": 0.004,
+      "end": 0.18,
+      "dur": 0.176,
+      "peak_t": 0.014,
+      "peak_db": 0.0,
+      "zcr": 959
+     },
+     "disabled": false,
+     "note": "",
+     "desc": "中等长度（0.18 秒）、中等明亮（过零率 959/秒）"
+    },
+    {
+     "no": 2,
+     "file": "hit_2.wav",
+     "id": "freesound:525175",
+     "title": "Metal Impact 5 {Soft}.wav",
+     "author": "Sophia_C",
+     "url": "https://freesound.org/s/525175/",
+     "license": "CC BY 4.0",
+     "credit": "\"Metal Impact 5 {Soft}.wav\" by Sophia_C ( https://freesound.org/s/525175/ ) licensed under CC BY 4.0",
+     "m": {
+      "onset": 0.074,
+      "end": 0.19,
+      "dur": 0.116,
+      "peak_t": 0.077,
+      "peak_db": 0.0,
+      "zcr": 18396
+     },
+     "disabled": false,
+     "note": "",
+     "desc": "最短（0.12 秒）、最脆亮（过零率 18396/秒）"
+    },
+    {
+     "no": 3,
+     "file": "hit_3.wav",
+     "id": "freesound:728515",
+     "title": "Impact Hit at soft but big material",
+     "author": "doudar41",
+     "url": "https://freesound.org/s/728515/",
+     "license": "CC0 1.0",
+     "credit": null,
+     "m": {
+      "onset": 0.006,
+      "end": 0.461,
+      "dur": 0.455,
+      "peak_t": 0.055,
+      "peak_db": 0.0,
+      "zcr": 263
+     },
+     "disabled": false,
+     "note": "",
+     "desc": "最长（0.46 秒）、最低沉（过零率 263/秒）"
+    }
+   ]
+  },
+  "swipe": {
+   "cn": "纸张/荧光笔",
+   "variants": [
+    {
+     "no": 1,
+     "file": "swipe_1.wav",
+     "id": "freesound:648387",
+     "title": "SlidePaperOnPaper.mp3",
+     "author": "Korczu",
+     "url": "https://freesound.org/s/648387/",
+     "license": "CC0 1.0",
+     "credit": null,
+     "m": {
+      "onset": 0.0,
+      "end": 0.121,
+      "dur": 0.121,
+      "peak_t": 0.067,
+      "peak_db": -44.9,
+      "zcr": 10285
+     },
+     "disabled": false,
+     "note": "",
+     "desc": "最短（0.12 秒）、中等明亮（过零率 10285/秒）"
+    },
+    {
+     "no": 2,
+     "file": "swipe_2.wav",
+     "id": "freesound:154403",
+     "title": "paper slide.wav",
+     "author": "semccab",
+     "url": "https://freesound.org/s/154403/",
+     "license": "CC0 1.0",
+     "credit": null,
+     "m": {
+      "onset": 0.0,
+      "end": 1.388,
+      "dur": 1.388,
+      "peak_t": 0.219,
+      "peak_db": -34.8,
+      "zcr": 4232
+     },
+     "disabled": false,
+     "note": "",
+     "desc": "最长（1.39 秒）、最低沉（过零率 4232/秒）"
+    },
+    {
+     "no": 3,
+     "file": "swipe_3.wav",
+     "id": "freesound:428744",
+     "title": "paper slide",
+     "author": "pauliperez1999",
+     "url": "https://freesound.org/s/428744/",
+     "license": "CC BY 3.0",
+     "credit": "\"paper slide\" by pauliperez1999 ( https://freesound.org/s/428744/ ) licensed under CC BY 3.0",
+     "m": {
+      "onset": 0.248,
+      "end": 0.638,
+      "dur": 0.39,
+      "peak_t": 0.274,
+      "peak_db": -12.5,
+      "zcr": 21660
+     },
+     "disabled": false,
+     "note": "",
+     "desc": "中等长度（0.39 秒）、最脆亮（过零率 21660/秒）"
+    }
+   ]
+  },
+  "ok": {
+   "cn": "完成提示",
+   "variants": [
+    {
+     "no": 1,
+     "file": "ok_1.wav",
+     "id": "freesound:878601",
+     "title": "Success Chime",
+     "author": "Qvantor",
+     "url": "https://freesound.org/s/878601/",
+     "license": "CC0 1.0",
+     "credit": null,
+     "m": {
+      "onset": 0.0,
+      "end": 0.662,
+      "dur": 0.662,
+      "peak_t": 0.134,
+      "peak_db": -11.6,
+      "zcr": 5989
+     },
+     "disabled": false,
+     "note": "",
+     "desc": "最长（0.66 秒）、最脆亮（过零率 5989/秒）"
+    },
+    {
+     "no": 2,
+     "file": "ok_2.wav",
+     "id": "freesound:878254",
+     "title": "UI Toast Notification",
+     "author": "Qvantor",
+     "url": "https://freesound.org/s/878254/",
+     "license": "CC0 1.0",
+     "credit": null,
+     "m": {
+      "onset": 0.0,
+      "end": 0.19,
+      "dur": 0.19,
+      "peak_t": 0.04,
+      "peak_db": -5.4,
+      "zcr": 3009
+     },
+     "disabled": false,
+     "note": "",
+     "desc": "最短（0.19 秒）、最低沉（过零率 3009/秒）"
+    },
+    {
+     "no": 3,
+     "file": "ok_3.wav",
+     "id": "freesound:842513",
+     "title": "Triple_Ping_Notification_Sound_Mobile_Optimized",
+     "author": "PiesHelpfulOven",
+     "url": "https://freesound.org/s/842513/",
+     "license": "CC0 1.0",
+     "credit": null,
+     "m": {
+      "onset": 0.0,
+      "end": 0.312,
+      "dur": 0.312,
+      "peak_t": 0.208,
+      "peak_db": -0.7,
+      "zcr": 4817
+     },
+     "disabled": false,
+     "note": "",
+     "desc": "中等长度（0.31 秒）、中等明亮（过零率 4817/秒）"
+    }
+   ]
+  },
+  "no": {
+   "cn": "错误提示",
+   "variants": [
+    {
+     "no": 1,
+     "file": "no_1.wav",
+     "id": "freesound:859155",
+     "title": "UI Interaction Error Beep - Ghost Metro Ticket",
+     "author": "TommasoMotteran",
+     "url": "https://freesound.org/s/859155/",
+     "license": "CC0 1.0",
+     "credit": null,
+     "m": {
+      "onset": 0.002,
+      "end": 0.193,
+      "dur": 0.192,
+      "peak_t": 0.091,
+      "peak_db": -11.2,
+      "zcr": 3023
+     },
+     "disabled": false,
+     "note": "",
+     "desc": "最短（0.19 秒）、最脆亮（过零率 3023/秒）"
+    },
+    {
+     "no": 2,
+     "file": "no_2.wav",
+     "id": "freesound:151309",
+     "title": "Beep1: Resonant Error Beep",
+     "author": "tcpp",
+     "url": "https://freesound.org/s/151309/",
+     "license": "CC BY 4.0",
+     "credit": "\"Beep1: Resonant Error Beep\" by tcpp ( https://freesound.org/s/151309/ ) licensed under CC BY 4.0",
+     "m": {
+      "onset": 0.0,
+      "end": 0.282,
+      "dur": 0.282,
+      "peak_t": 0.009,
+      "peak_db": -2.2,
+      "zcr": 543
+     },
+     "disabled": false,
+     "note": "",
+     "desc": "最长（0.28 秒）、最低沉（过零率 543/秒）"
+    },
+    {
+     "no": 3,
+     "file": "no_3.wav",
+     "id": "freesound:581602",
+     "title": "Beep error",
+     "author": "SamsterBirdies",
+     "url": "https://freesound.org/s/581602/",
+     "license": "CC0 1.0",
+     "credit": null,
+     "m": {
+      "onset": 0.0,
+      "end": 0.273,
+      "dur": 0.273,
+      "peak_t": 0.053,
+      "peak_db": -6.9,
+      "zcr": 2000
+     },
+     "disabled": false,
+     "note": "",
+     "desc": "中等长度（0.27 秒）、中等明亮（过零率 2000/秒）"
+    }
+   ]
+  },
+  "key": {
+   "cn": "按键",
+   "variants": [
+    {
+     "no": 1,
+     "file": "key_1.wav",
+     "id": "freesound:799117",
+     "title": "FUJITSU Computers Keyboard - P key Press Mono",
+     "author": "Sadiquecat",
+     "url": "https://freesound.org/s/799117/",
+     "license": "CC0 1.0",
+     "credit": null,
+     "m": {
+      "onset": 0.0,
+      "end": 0.073,
+      "dur": 0.073,
+      "peak_t": 0.001,
+      "peak_db": -0.6,
+      "zcr": 657
+     },
+     "disabled": false,
+     "note": "",
+     "desc": "最短（0.07 秒）、最低沉（过零率 657/秒）"
+    },
+    {
+     "no": 2,
+     "file": "key_2.wav",
+     "id": "freesound:799114",
+     "title": "FUJITSU Computers Keyboard - A key Press Mono",
+     "author": "Sadiquecat",
+     "url": "https://freesound.org/s/799114/",
+     "license": "CC0 1.0",
+     "credit": null,
+     "m": {
+      "onset": 0.0,
+      "end": 0.16,
+      "dur": 0.16,
+      "peak_t": 0.0,
+      "peak_db": -7.9,
+      "zcr": 1115
+     },
+     "disabled": false,
+     "note": "",
+     "desc": "中等长度（0.16 秒）、中等明亮（过零率 1115/秒）"
+    },
+    {
+     "no": 3,
+     "file": "key_3.wav",
+     "id": "freesound:799118",
+     "title": "FUJITSU Computers Keyboard - T key Press Mono",
+     "author": "Sadiquecat",
+     "url": "https://freesound.org/s/799118/",
+     "license": "CC0 1.0",
+     "credit": null,
+     "m": {
+      "onset": 0.0,
+      "end": 0.19,
+      "dur": 0.19,
+      "peak_t": 0.119,
+      "peak_db": -0.5,
+      "zcr": 1586
+     },
+     "disabled": false,
+     "note": "",
+     "desc": "最长（0.19 秒）、最脆亮（过零率 1586/秒）"
+    }
+   ]
+  }
+ },
+ "rules": {
+  "_说明": "gk_bed.py --pool 按这里的规则挑变体。数值都可以改；改完重跑 gk_bed.py 即可。详细解释见 references/sfx.md。",
+  "max_len": {
+   "whoosh": 0.8,
+   "pop": 0.35,
+   "tick": 0.2,
+   "hit": 0.6,
+   "swipe": 0.6,
+   "ok": 0.9,
+   "no": 0.7,
+   "key": 0.2
+  },
+  "align_peak": [
+   "whoosh"
+  ],
+  "roles": {
+   "whoosh": [
+    "panel",
+    "hook",
+    "full"
+   ],
+   "pop": [
+    "card",
+    "bubble"
+   ],
+   "tick": [
+    "list",
+    "check",
+    "mark"
+   ],
+   "hit": [
+    "big",
+    "small"
+   ],
+   "swipe": [
+    "highlight",
+    "strike",
+    "page"
+   ],
+   "ok": [
+    "verdict",
+    "save"
+   ],
+   "no": [
+    "cross",
+    "risk"
+   ]
+  },
+  "role_cn": {
+   "panel": "上卡下人底色展开",
+   "hook": "钩子/章节/开场",
+   "full": "全屏讲解/片尾进场",
+   "card": "卡片进场",
+   "bubble": "气泡/标注",
+   "list": "列表逐项",
+   "check": "打勾",
+   "mark": "框选",
+   "big": "主数字落定",
+   "small": "次要数字落定",
+   "highlight": "荧光笔",
+   "strike": "划掉",
+   "page": "翻页",
+   "doc": "文件滑入",
+   "verdict": "清单结论",
+   "save": "片尾收藏",
+   "cross": "打叉",
+   "risk": "风险提示",
+   "type": "打字"
+  },
+  "fixed": {
+   "swipe.doc": "longest"
+  },
+  "frequent_not_longest": [
+   "whoosh.panel",
+   "pop.card",
+   "tick.list",
+   "tick.check",
+   "swipe.highlight"
+  ],
+  "heavy_not_shortest": [
+   "whoosh.hook",
+   "hit.big"
+  ],
+  "role_gain_db": {
+   "hook": 2,
+   "big": 2,
+   "small": -2,
+   "bubble": -2,
+   "mark": 1,
+   "page": -3,
+   "doc": -2,
+   "risk": 1
+  },
+  "run": {
+   "roles": [
+    "tick.list",
+    "tick.check",
+    "pop.bubble"
+   ],
+   "window": 1.5,
+   "step": 0.03,
+   "max": 0.09
+  },
+  "density": {
+   "tick": {
+    "per_seconds": 10,
+    "max": 7
+   }
+  },
+  "vary": {
+   "pitch": 0.02,
+   "gain_db": 1.5
+  },
+  "typing": {
+   "rate": 9,
+   "jitter": 0.25
+  },
+  "rel_db": {
+   "whoosh": -1,
+   "pop": 4,
+   "tick": 3,
+   "hit": 6,
+   "swipe": -2,
+   "ok": 3,
+   "no": 3
+  },
+  "peak_rel": {
+   "key": 17
+  },
+  "peak_max": -6,
+  "_响度说明": "每类的 50 ms RMS 峰值 = 人声中位数 + rel_db（用户认可的起步值）；按键按峰值：人声 + peak_rel；任何声音峰值不超过 peak_max。场合再加减 role_gain_db。"
+ }
+}
